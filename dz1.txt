@@ -1,0 +1,231 @@
+1 pwd
+
+2 mkdir 001
+
+3 cd 001 
+
+4 mkdir p1 p2 p3
+
+5 cd p1
+
+6 touch t1.txt t2.txt t3.json t4.json t5.json
+
+7 mkdir p4 p5 p6
+
+8 ls
+
+9 start t1.txt
+
+10 proverka
+
+11 ?
+
+12 cd ../
+
+13 cd p1
+   mv t1.txt t2.txt / p4
+
+14 cp t3.json t4.json / p5
+
+15 find . t1
+
+16 cd t4
+   tail t1.txt
+
+17 head -5 t1.txt
+
+18 tail -5 t1.txt
+
+19 less t1.txt
+
+20 date
+
+21 mkdir dir_1
+
+22 cd dir_1
+
+23 mkdir inner_dir_1
+
+24 pwd
+
+25 touch tf_1.txt
+
+26 cat>tf_2.txt
+-the first 1
+-the second 2
+-the third 3
+
+27 cd inner_dir_1
+
+28 cat>tf_3.txt
+testing 00001
+testing 00002
+testing 00003
+testing 00004
+testing 00005
+
+29-31 cat>>tf_3.txt
+the second 2
+the sec 2
+the SeCoNd 2
+
+32-33 cd ../
+cat>>tf_2.txt
+the sec 3
+the seConD 2
+
+34 cat>tf_4.txt
+str 1
+str 2
+str 3
+str 4
+str 5
+str 6
+str 7
+str 8
+str 9
+str 10
+str 11
+str 12
+str 13
+str 14
+str 15
+
+35 cat>tf_5.txt
+st 1
+st 2
+st 3
+st 4
+st 5
+st 6
+st 7
+st 8
+st 9
+st 10
+st 11
+st 12
+st 13
+
+36 ls
+tf_3.txt  tf_4.txt  tf_5.txt
+
+37 cd ../
+
+38 tail C:/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt
+
+39 find . tf_4.txt
+.
+./inner_dir_1
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_2.txt
+find: ‘tf_4.txt’: No such file or directory
+
+40 cd inner_dir_1
+ sed -i '1,15d' tf_4.txt
+
+41 find . tf
+.
+./tf_3.txt
+./tf_4.txt
+./tf_5.txt
+find: ‘tf’: No such file or directory
+
+42 find /C/Users/Max/git/test/001/p1 tf
+/C/Users/Max/git/test/001/p1
+/C/Users/Max/git/test/001/p1/p4
+/C/Users/Max/git/test/001/p1/p4/dir_1
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_4.txt
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_5.txt
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_1.txt
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_2.txt
+/C/Users/Max/git/test/001/p1/p4/t1.txt
+/C/Users/Max/git/test/001/p1/p4/t2.txt
+/C/Users/Max/git/test/001/p1/p5
+/C/Users/Max/git/test/001/p1/p5/t3.json
+/C/Users/Max/git/test/001/p1/p5/t4.json
+/C/Users/Max/git/test/001/p1/p6
+/C/Users/Max/git/test/001/p1/t3.json
+/C/Users/Max/git/test/001/p1/t4.json
+/C/Users/Max/git/test/001/p1/t5.json
+find: ‘tf’: No such file or directory
+
+43 grep -r"sec"
+tf_3.txt:the second 2
+tf_3.txt:the sec 2
+
+44 grep -r"sec" /C/Users/Max/git/test/001
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the sec 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_2.txt:-the second 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_2.txt:the sec 3
+
+45 grep -r sec
+tf_3.txt:the second 2
+tf_3.txt:the sec 2
+
+46 grep -r"sec" /C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the sec 2
+
+47 grep -r"second" /C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+
+48 grep -r"second" /C/Users/Max/git/test/001
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_2.txt:-the second 2
+
+49 grep -r"second" /C/Users/Max/git/test/001/p1/p4/dir_1/
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+/C/Users/Max/git/test/001/p1/p4/dir_1/tf_2.txt:-the second 2
+
+50 grep -r"second" /C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1
+/C/Users/Max/git/test/001/p1/p4/dir_1/inner_dir_1/tf_3.txt:the second 2
+
+51 grep -r -v "second"
+tf_3.txt:testing 00001
+tf_3.txt:testing 00002
+tf_3.txt:testing 00003
+tf_3.txt:testing 00004
+tf_3.txt:testing 00005
+tf_3.txt:the sec 2
+tf_3.txt:the SeCoNd 2
+tf_5.txt:st 1
+tf_5.txt:st 2
+tf_5.txt:st 3
+tf_5.txt:st 4
+tf_5.txt:st 5
+tf_5.txt:st 6
+tf_5.txt:st 7
+tf_5.txt:st 8
+tf_5.txt:st 9
+tf_5.txt:st 10
+tf_5.txt:st 11
+tf_5.txt:st 12
+tf_5.txt:st 13
+
+52 grep -l -r -v "second"
+tf_3.txt
+tf_5.txt
+
+53 tail -4 tf_5.txt
+st 10
+st 11
+st 12
+st 13
+
+54 head -4 tf_5.txt
+st 1
+st 2
+st 3
+st 4
+
+55 echo "Good job!!"
+echo "Good jobpwd"
+Good jobpwd
+
+
